@@ -284,14 +284,14 @@ console.log()
 function uniqueValues (array1, array2) {
     //keep the elements that are not present in the other array,
     //then store in newArray1
-    newArray1 = array1.filter( function (value) {
+    var newArray1 = array1.filter( function (value) {
         //indexOf returns -1 if the value is not found in the specified array,
         //so this returns true if this value is not found in the other array
         return (array2.indexOf(value) === -1);
     })
     
     //do the same for the other array
-    newArray2 = array2.filter( function (value) {
+    var newArray2 = array2.filter( function (value) {
         return (array1.indexOf(value) === -1);
     })
     
