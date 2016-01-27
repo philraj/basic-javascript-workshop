@@ -10,3 +10,10 @@ var quotes = [
     "This fortune teller will self-destruct in 5 seconds.",
     "Try again later, I'm busy."
 ]
+
+function displayQuote () {
+    var randomInt = Math.floor( Math.random()*10 );
+    console.log(quotes[randomInt]);
+}
+
+displayQuote();
