@@ -90,3 +90,22 @@ console.log("subtract, 18, 9... " + operator('subtract', 18, 9))
 console.log("mult, 7, 7... " + operator('mult', 7, 7))
 console.log("div, 10, 9... " + operator('div', 10, 9))
 console.log()
+
+//takes a string and a number and returns the string repeated that many times.
+function repeatString (string, numOfTimes) {
+    var repeatedString = "";
+    
+    for (var i = 0; i < numOfTimes; i++) {
+        repeatedString += string;
+    }
+    
+    return repeatedString;
+}
+
+console.log("Testing repeatString()...")
+console.log("zebra, 3... " + repeatString('zebra', 3))
+console.log("xylophone, 5... " + repeatString('xylophone', 5))
+console.log("empty string, 20... " + repeatString('', 20))
+console.log()
+
+
