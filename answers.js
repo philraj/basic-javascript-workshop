@@ -109,3 +109,19 @@ console.log("empty string, 20... " + repeatString('', 20))
 console.log()
 
 
+//takes a string, and returns the reverse of that string.
+function reverse (string) {
+    var reversedString = "";
+    
+    for (var i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i];
+    }
+    
+    return reversedString;
+}
+
+console.log("Testing reverse()...")
+console.log("anteater ... " + reverse('anteater'))
+console.log("fluorescent ... " + reverse('fluorescent'))
+console.log("empty string ... " + reverse(""))
+console.log()
