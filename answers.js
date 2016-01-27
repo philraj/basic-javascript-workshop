@@ -279,7 +279,33 @@ console.log()
 
 
 
-//Write a function that takes two arrays, and returns an array of all elements that are only in one array. For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5]. Test your function on different inputs. Hint: you should look up array methods indexOf and slice.
+//Write a function that takes two arrays, and returns 
+//an array of all elements that are only in one array.
+function uniqueValues (array1, array2) {
+    //keep the elements that are not present in the other array,
+    //then store in newArray1
+    newArray1 = array1.filter( function (value) {
+        return (array2.indexOf(value) === -1)
+    })
+    
+    //do the same for the other array
+    newArray2 = array2.filter( function (value) {
+        return (array1.indexOf(value) === -1)
+    })
+    
+    //combine the two arrays
+    return newArray1.concat(newArray2);
+}
+
+console.log("Testing uniqueValues()...")
+console.log("[1,2,3] & [1,2,4,5] ... " + uniqueValues([1,2,3], [1,2,4,5]))
+console.log("[1,3,5,7,9] & [5,7,9,11,13] ... "
+    + uniqueValues([1,3,5,7,9], [5,7,9,11,13]))
+console.log()
+
+
+
+
 
 
 
