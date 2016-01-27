@@ -228,4 +228,19 @@ console.log("'hEllO woRlD!' ... " + capitalize('hEllO woRlD!'))
 
 
 
-//
+//takes an array and returns the largest number of the array
+function largest (numbers) {
+    return numbers.reduce(function (previous, current) {
+        if (current > previous) return current;
+        else return previous;
+    });
+}
+
+console.log("Testing largest()...")
+console.log("[3,6,9] ... " + largest([3,6,9]))
+console.log("[12,11,5,18,3,5] ... " + largest([12,11,5,18,3,5]))
+console.log();
+
+
+
+
