@@ -65,3 +65,28 @@ console.log("House and Plant ... " + multiply("House", "Plant"))
 console.log("5 and '5'... " + multiply(5,'5'))
 console.log()
 
+//takes two numbers and an operation. If operation is ‘add’, returns the sum of 
+//the numbers. If operation is ‘subtract’, returns the difference. If operation 
+//is ‘mult’, return the product. If operation is ‘div’, return the ratio. 
+//Otherwise returns 0. NO INPUT VALIDATION!
+function operator (operation, n1, n2) {
+    switch (operation) {
+        case 'add':
+            return n1 * n2;
+        case 'subtract':
+            return n1 - n2;
+        case 'mult':
+            return n1 * n2;
+        case 'div':
+            return n1 / n2;
+        default:
+            return 0;
+    }
+}
+
+console.log("Testing operator()...")
+console.log("add, 10, 5... " + operator('add', 10, 5))
+console.log("subtract, 18, 9... " + operator('subtract', 18, 9))
+console.log("mult, 7, 7... " + operator('mult', 7, 7))
+console.log("div, 10, 9... " + operator('div', 10, 9))
+console.log()
