@@ -6,7 +6,7 @@ var fortunes = [
 ]
 
 function output () {
-    var randomInt = Math.floor( Math.random() * 5);
+    var randomInt = Math.floor( Math.random() * 4);
     
     var msg = fortunes[randomInt];
     
