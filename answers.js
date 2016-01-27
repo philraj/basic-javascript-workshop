@@ -244,3 +244,42 @@ console.log();
 
 
 
+
+//takes an array, and returns a filtered array.
+//The filtered array only contains truthy values.
+function truthy (array) {
+    return array.filter( function (value) {
+        return value;
+    });
+}
+
+console.log("Testing truthy()...")
+console.log("[true, false, 1] ..." + truthy([true, false, 1]))
+console.log("[true, false, '', undefined, 50, 'Hello'] ... "
+    + truthy([true, false, '', undefined, 50, 'Hello']))
+console.log()
+
+
+
+
+
+//takes an array of numbers, and returns the sum
+function sumArray (array) {
+    return array.reduce( function (previous, current) {
+        return previous + current;
+    }, 0);
+}
+
+console.log("Testing sumArray()...")
+console.log("[1,2,3] ... " + sumArray([1,2,3]))
+console.log("[9,8,7,6,5,4,3,2,1] ... " + sumArray([9,8,7,6,5,4,3,2,1]))
+console.log()
+
+
+
+
+
+//Write a function that takes two arrays, and returns an array of all elements that are only in one array. For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5]. Test your function on different inputs. Hint: you should look up array methods indexOf and slice.
+
+
+
