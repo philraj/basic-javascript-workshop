@@ -196,18 +196,36 @@ console.log("Testing longestWord()...");
 console.log("'What a beautiful day it is' ... " + longestWord('What a beautiful day it is'));
 console.log("'I really like to code in JavaScript until I get bored' ... "
     + longestWord('I really like to code in JavaScript until I get bored'));
+console.log()
 
 
 
 
 
 //takes a phrase, and returns the same phrase with every word capitalized.
-// function capitalize (phrase) {
+function capitalize (phrase) {
+    //splits phrase into array of words
+    var words = phrase.split(' ');
     
-// }
+    //applies anonymous function to each word...
+    //builds a new string out of the capitalized first letter,
+    //plus the rest of the string set to lowercase, using slice
+    //then puts it into capWords
+    var capWords = words.map( function (word) {
+        return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    });
+
+    //joins the array of words back into a string
+    return capWords.join(' ');
+}
+
+console.log("Testing capitalize()... ")
+console.log("'tHis iS a PHRaSE iN aNnOying aLternATiNg CaPS!' ... "
+    + capitalize('tHis iS a PHRaSE iN aNnOying aLternATiNg CaPS!'))
+console.log("'hEllO woRlD!' ... " + capitalize('hEllO woRlD!'))
 
 
 
 
 
-
+//
