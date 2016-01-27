@@ -307,5 +307,17 @@ console.log()
 
 
 
+//takes an array and a function as arguments. Returns a new array that has the
+//provided function applied to each element of the old array.
+function myMap (array, func) {
+    for (var i = 0; i < array.length; i++) {
+        array[i] = func(array[i]);
+    }
+    
+    return array;
+}
 
+console.log("Testing myMap()...")
+console.log("[2,4,6] & function (val) {return val/2} ... "
+    + myMap([2,4,6], function (val) { return val/2}))
 
