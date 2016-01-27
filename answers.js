@@ -285,22 +285,40 @@ function uniqueValues (array1, array2) {
     //keep the elements that are not present in the other array,
     //then store in newArray1
     newArray1 = array1.filter( function (value) {
-        return (array2.indexOf(value) === -1)
+        //indexOf returns -1 if the value is not found in the specified array,
+        //so this returns true if this value is not found in the other array
+        return (array2.indexOf(value) === -1);
     })
     
     //do the same for the other array
     newArray2 = array2.filter( function (value) {
-        return (array1.indexOf(value) === -1)
+        return (array1.indexOf(value) === -1);
     })
     
-    //combine the two arrays
-    return newArray1.concat(newArray2);
+    //combine the two new arrays
+    var combinedArray = newArray1.concat(newArray2);
+    
+    //To filter out any remaining duplicates (which could exist if one array
+    //had duplicate entries), Array.filter() is used one last time.
+    //
+    //The callback is given each value in the array, along with its index 
+    //in the array. Array.lastIndexOf() is used to check if 
+    //the index of this value is the last instance of the value in the array.
+    //
+    //If combinedArray.lastIndexOf(value) === index, this means that the
+    //current value and the last instance of that value are at the same
+    //position.
+    return combinedArray.filter ( function (value, index) {
+        return (combinedArray.lastIndexOf(value) === index);
+    });
 }
 
 console.log("Testing uniqueValues()...")
 console.log("[1,2,3] & [1,2,4,5] ... " + uniqueValues([1,2,3], [1,2,4,5]))
 console.log("[1,3,5,7,9] & [5,7,9,11,13] ... "
     + uniqueValues([1,3,5,7,9], [5,7,9,11,13]))
+console.log("[1,2,3,4,5] & [4,5,6,7,7,7] ... "
+    + uniqueValues([1,2,3,4,5], [4,5,6,7,7,7]))   
 console.log()
 
 
