@@ -177,4 +177,37 @@ console.log()
 
 
 
-//
+//takes a phrase as a string, and returns the longest word in that phrase. 
+//If the phrase contains more than one such word, returns the first occurrence.
+function longestWord (phrase) {
+    var words = phrase.split(' ');
+    var longestIndex = 0;
+    
+    for (var i = 1; i < words.length; i++) {
+        if (words[i].length > words[longestIndex].length) {
+            longestIndex = i;
+        }
+    }
+    
+    return words[longestIndex];
+}
+
+console.log("Testing longestWord()...");
+console.log("'What a beautiful day it is' ... " + longestWord('What a beautiful day it is'));
+console.log("'I really like to code in JavaScript until I get bored' ... "
+    + longestWord('I really like to code in JavaScript until I get bored'));
+
+
+
+
+
+//takes a phrase, and returns the same phrase with every word capitalized.
+// function capitalize (phrase) {
+    
+// }
+
+
+
+
+
+
