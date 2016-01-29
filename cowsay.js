@@ -5,11 +5,7 @@ var fortunes = [
     "MOO!"
 ]
 
-function output () {
-    var randomInt = Math.floor( Math.random() * 4);
-    
-    var msg = fortunes[randomInt];
-    
+function output (msg) {
     if (msg.length > 30) {
         var words = msg.split(' ');
         var newMsg = '';
@@ -18,10 +14,10 @@ function output () {
             var lastLineLength = newMsg.length + words[i].length - newMsg.lastIndexOf('\n') + 1;
             
             if (lastLineLength <= 30) {
-                newMsg += " " + words[i];
+                newMsg += words[i] + " ";
             }
             else {
-                newMsg += "|\n" + words[i];
+                newMsg += "\n" + words[i] + " ";
             }
         }
         
@@ -32,4 +28,5 @@ function output () {
     }
 }
 
-output();
+var rand = Math.floor( Math.random() * 4);
+output(fortunes[rand]);
