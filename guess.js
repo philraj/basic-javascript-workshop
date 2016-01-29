@@ -1,17 +1,29 @@
 //generate random number between 1  and 100
-var randomInt = Math.floor( Math.random() * 100) + 1;
+var answer = Math.floor( Math.random() * 100) + 1;
+var guess;
+var attempts = 4;
 
-for (var i = 3; i >= 0; i--) {
-    var guess = prompt("Please guess a number from 1 to 100.");
+for (attempts; attempts > 0; attempts--) {
     
-    if (guess === randomInt) {
+    guess = Number(prompt("Please guess a number from 1 to 100. You have " + attempts + " guesses left."));
+    
+    if (guess === answer) 
+    {
         alert("You win!");
         break;
     }
-    else if (i >= 0) {
-        alert("Wrong! Try again. You have " + i + " guesses left.");
+    else if (attempts > 1) 
+    {
+        var hint = '';
+        
+        if (guess < answer) hint = "higher";
+        else if (guess > answer) hint = "lower";
+        
+        alert("Wrong! Try again. The correct answer is " + hint + ".");
     }
-    else {
-        alert("You lose!");
+    else 
+    {
+        alert("You lose! The answer was " + answer);
     }
+    
 }
